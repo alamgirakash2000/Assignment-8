@@ -1,0 +1,7 @@
+.comment {
+  background: #0202026e;
+  border-radius: 10px;
+}
+.comment:hover {
+  background: #020202d5;
+}

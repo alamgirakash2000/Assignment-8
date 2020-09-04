@@ -1,0 +1,7 @@
+.post {
+  background: #01010193;
+  border-radius: 10px;
+}
+.post:hover {
+  background: #010101cb;
+}
