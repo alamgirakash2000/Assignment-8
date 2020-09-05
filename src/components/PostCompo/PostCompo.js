@@ -7,13 +7,13 @@ import "./PostCompo.style.css";
 function PostCompo({ post }) {
   const [name, setName] = useState("");
 
+  // Get the name of the user
   useEffect(() => {
     const getNameAndImage = async () => {
       await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
         .then((res) => res.json())
         .then((data) => setName(data.name));
     };
-
     getNameAndImage();
   }, []);
 

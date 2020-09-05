@@ -5,6 +5,7 @@ import PostCompo from "../components/PostCompo/PostCompo";
 function Home({ setIsLoading }) {
   const [posts, setPosts] = useState([]);
 
+  //Getting all posts
   useEffect(() => {
     const getPosts = async () => {
       setIsLoading(true);
@@ -20,6 +21,8 @@ function Home({ setIsLoading }) {
     <div className="container">
       <h2 className="text-center mt-4">All Posts</h2>
       <div className="row">
+        {/*Calling post component to show each post*/}
+
         {posts.map((post) => (
           <PostCompo key={post.id} post={post} />
         ))}

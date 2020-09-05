@@ -11,10 +11,12 @@ function PostDetails({ setIsLoading }) {
   useEffect(() => {
     const getPost = async () => {
       setIsLoading(true);
+      // Getting all the comments for this post
       await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
         .then((res) => res.json())
         .then((data) => setPost(data));
 
+      // Getting image for the commentator
       await fetch(
         `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
       )
@@ -33,6 +35,8 @@ function PostDetails({ setIsLoading }) {
       </div>
       <h5>Comments ({comments.length}) :</h5>
       <div className="details__comments row">
+        {/* Calling comment component to show each comment */}
+
         {comments.map((comment) => (
           <Comment key={comment.id} comment={comment} />
         ))}

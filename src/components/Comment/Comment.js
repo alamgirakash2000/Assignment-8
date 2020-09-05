@@ -6,6 +6,7 @@ import "./Comment.style.css";
 function Comment({ comment }) {
   const [imgUrl, setImgUrl] = useState();
 
+  // fetch the image of the commentator at the beginning
   useEffect(() => {
     const getImgUrl = async () => {
       await fetch("https://randomuser.me/api/")
